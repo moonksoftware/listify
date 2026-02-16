@@ -11,6 +11,7 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="icon" type="image/png" href="images/icon.png">
 
     <!-- Tailwind CSS -->
     <script src="https://cdn.tailwindcss.com"></script>
@@ -76,16 +77,19 @@
                 <div class="flex-shrink-0 flex items-center">
                     <a href="#"
                         class="text-2xl font-bold tracking-tight text-slate-900 dark:text-white flex items-center gap-2">
-                        <span
-                            class="bg-brand-100 dark:bg-brand-900 text-brand-600 dark:text-brand-400 p-1.5 rounded-lg">
-                            <i class="fa-solid fa-check-double text-lg"></i>
-                        </span>
+                        <img src="images/icon.png" alt="Listify" class="w-10 h-10 rounded-lg">
                         Listify
                     </a>
                 </div>
 
                 <!-- Desktop Nav -->
                 <div class="hidden md:flex items-center space-x-6">
+                    <!-- CTA Button -->
+                    <a href="#download"
+                        class="bg-brand-600 hover:bg-brand-700 text-white px-5 py-2 rounded-full font-medium transition-all shadow-lg shadow-brand-500/20 hover:shadow-brand-500/40 text-sm"
+                        data-i18n="download">
+                        Download
+                    </a>
                     <!-- Theme Toggle -->
                     <button id="theme-toggle"
                         class="text-slate-500 hover:text-slate-700 dark:text-slate-400 dark:hover:text-slate-200 transition-colors p-2 rounded-full hover:bg-gray-100 dark:hover:bg-slate-800"
@@ -98,13 +102,6 @@
                         class="text-sm font-medium text-slate-600 hover:text-brand-600 dark:text-slate-300 dark:hover:text-brand-400 transition-colors px-3 py-1 rounded-full border border-gray-200 dark:border-slate-700 hover:border-brand-200 dark:hover:border-brand-800">
                         <span id="current-lang">EN</span>
                     </button>
-
-                    <!-- CTA Button -->
-                    <a href="#download"
-                        class="bg-brand-600 hover:bg-brand-700 text-white px-5 py-2 rounded-full font-medium transition-all shadow-lg shadow-brand-500/20 hover:shadow-brand-500/40 text-sm"
-                        data-i18n="download">
-                        Download
-                    </a>
                 </div>
 
                 <!-- Mobile Menu Button -->
@@ -139,14 +136,7 @@
                     </p>
 
                     <div class="flex flex-col sm:flex-row gap-4 justify-center lg:justify-start" id="download">
-                        <a href="#"
-                            class="inline-flex items-center justify-center px-6 py-3 border border-transparent text-base font-medium rounded-xl text-white bg-slate-900 hover:bg-slate-800 dark:bg-white dark:text-slate-900 dark:hover:bg-slate-100 transition-all shadow-xl hover:shadow-2xl transform hover:-translate-y-1">
-                            <i class="fa-brands fa-apple text-2xl mr-3"></i>
-                            <div class="text-left">
-                                <div class="text-xs uppercase opacity-80">Download on the</div>
-                                <div class="font-bold leading-none">App Store</div>
-                            </div>
-                        </a>
+
                         <a href="#"
                             class="inline-flex items-center justify-center px-6 py-3 border border-transparent text-base font-medium rounded-xl text-white bg-brand-600 hover:bg-brand-700 transition-all shadow-xl shadow-brand-500/30 hover:shadow-brand-500/50 transform hover:-translate-y-1">
                             <i class="fa-brands fa-google-play text-xl mr-3"></i>
@@ -167,16 +157,10 @@
 
                     <!-- App Screenshot Placeholder -->
                     <div
-                        class="relative w-64 h-[500px] md:w-72 md:h-[550px] bg-gray-200 dark:bg-slate-800 rounded-[3rem] border-8 border-gray-900 dark:border-slate-700 shadow-2xl flex flex-col items-center justify-center overflow-hidden">
+                        class="relative w-64 h-[520px] bg-gray-200 dark:bg-slate-800 rounded-[2rem] border-8 border-gray-900 dark:border-slate-700 shadow-2xl flex flex-col items-center justify-center overflow-hidden">
                         <!-- Screen Content -->
-                        <div
-                            class="absolute top-0 w-full h-full bg-white dark:bg-slate-800 flex flex-col items-center justify-center p-6 text-center">
-                            <i class="fa-solid fa-mobile-screen text-6xl text-gray-300 dark:text-slate-600 mb-4"></i>
-                            <span
-                                class="text-gray-400 dark:text-slate-500 font-medium text-sm uppercase tracking-widest">
-                                App Screenshot<br>Placeholder
-                            </span>
-                        </div>
+                        <img src="images/4.jpg" alt="App Screenshot"
+                            class="absolute inset-0 w-full h-full object-cover object-top">
                         <!-- Notch -->
                         <div class="absolute top-0 w-32 h-6 bg-gray-900 dark:bg-slate-700 rounded-b-xl"></div>
                     </div>
@@ -185,7 +169,6 @@
         </div>
     </section>
 
-    <!-- Features Section -->
     <section class="py-16 md:py-24 bg-white dark:bg-slate-800 transition-colors duration-300">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
@@ -198,13 +181,11 @@
                         <i class="fa-solid fa-basket-shopping text-xl"></i>
                     </div>
                     <h3 class="text-xl font-bold text-slate-900 dark:text-white mb-3" data-i18n="feature1_title">
-                        Shopping List</h3>
+                        Alışveriş Listesi</h3>
                     <p class="text-slate-600 dark:text-slate-300 leading-relaxed mb-2" data-i18n="feature1_desc">
-                        Type items, get automatic categorization
-                    </p>
-                    <p class="text-sm text-slate-500 dark:text-slate-400" data-i18n="feature1_detail">
-                        Fruits, meat, dairy, cleaning supplies and more
-                    </p>
+                        Ürünleri yazın, otomatik olarak kategorize edilsin</p>
+                    <p class="text-sm text-slate-500 dark:text-slate-400" data-i18n="feature1_detail">Meyve, et, süt
+                        ürünleri, temizlik malzemeleri ve daha fazlası</p>
                 </div>
 
                 <!-- Feature 2 -->
@@ -214,14 +195,12 @@
                         class="w-12 h-12 bg-blue-100 dark:bg-blue-900/30 rounded-xl flex items-center justify-center text-blue-600 dark:text-blue-400 mb-6 group-hover:scale-110 transition-transform">
                         <i class="fa-solid fa-check-to-slot text-xl"></i>
                     </div>
-                    <h3 class="text-xl font-bold text-slate-900 dark:text-white mb-3" data-i18n="feature2_title">To-Do
-                        List</h3>
-                    <p class="text-slate-600 dark:text-slate-300 leading-relaxed mb-2" data-i18n="feature2_desc">
-                        Plan your daily tasks
-                    </p>
-                    <p class="text-sm text-slate-500 dark:text-slate-400" data-i18n="feature2_detail">
-                        Mark completed items
-                    </p>
+                    <h3 class="text-xl font-bold text-slate-900 dark:text-white mb-3" data-i18n="feature2_title">
+                        Yapılacaklar Listesi</h3>
+                    <p class="text-slate-600 dark:text-slate-300 leading-relaxed mb-2" data-i18n="feature2_desc">Günlük
+                        görevlerinizi planlayın</p>
+                    <p class="text-sm text-slate-500 dark:text-slate-400" data-i18n="feature2_detail">Tamamladıklarınızı
+                        işaretleyin</p>
                 </div>
 
                 <!-- Feature 3 -->
@@ -231,14 +210,12 @@
                         class="w-12 h-12 bg-purple-100 dark:bg-purple-900/30 rounded-xl flex items-center justify-center text-purple-600 dark:text-purple-400 mb-6 group-hover:scale-110 transition-transform">
                         <i class="fa-solid fa-share-nodes text-xl"></i>
                     </div>
-                    <h3 class="text-xl font-bold text-slate-900 dark:text-white mb-3" data-i18n="feature3_title">List
-                        Sharing</h3>
-                    <p class="text-slate-600 dark:text-slate-300 leading-relaxed mb-2" data-i18n="feature3_desc">
-                        Share lists with a 6-digit code
-                    </p>
-                    <p class="text-sm text-slate-500 dark:text-slate-400" data-i18n="feature3_detail">
-                        Code valid for 24 hours
-                    </p>
+                    <h3 class="text-xl font-bold text-slate-900 dark:text-white mb-3" data-i18n="feature3_title">Liste
+                        Paylaşımı</h3>
+                    <p class="text-slate-600 dark:text-slate-300 leading-relaxed mb-2" data-i18n="feature3_desc">6
+                        haneli kod ile listelerinizi paylaşın</p>
+                    <p class="text-sm text-slate-500 dark:text-slate-400" data-i18n="feature3_detail">Kod 24 saat
+                        geçerli</p>
                 </div>
 
                 <!-- Feature 4 -->
@@ -249,13 +226,11 @@
                         <i class="fa-solid fa-wand-magic-sparkles text-xl"></i>
                     </div>
                     <h3 class="text-xl font-bold text-slate-900 dark:text-white mb-3" data-i18n="feature4_title">
-                        Customization</h3>
-                    <p class="text-slate-600 dark:text-slate-300 leading-relaxed mb-2" data-i18n="feature4_desc">
-                        Dark and light theme support
-                    </p>
-                    <p class="text-sm text-slate-500 dark:text-slate-400" data-i18n="feature4_detail">
-                        Turkish and English language options
-                    </p>
+                        Kişiselleştirme</h3>
+                    <p class="text-slate-600 dark:text-slate-300 leading-relaxed mb-2" data-i18n="feature4_desc">Koyu ve
+                        açık tema desteği</p>
+                    <p class="text-sm text-slate-500 dark:text-slate-400" data-i18n="feature4_detail">Türkçe ve
+                        İngilizce dil seçeneği</p>
                 </div>
 
                 <!-- Feature 5 -->
@@ -265,23 +240,109 @@
                         class="w-12 h-12 bg-rose-100 dark:bg-rose-900/30 rounded-xl flex items-center justify-center text-rose-600 dark:text-rose-400 mb-6 group-hover:scale-110 transition-transform">
                         <i class="fa-solid fa-heart text-xl"></i>
                     </div>
-                    <h3 class="text-xl font-bold text-slate-900 dark:text-white mb-3" data-i18n="feature5_title">Easy to
-                        Use</h3>
-                    <p class="text-slate-600 dark:text-slate-300 leading-relaxed mb-2" data-i18n="feature5_desc">
-                        No account required
-                    </p>
-                    <p class="text-sm text-slate-500 dark:text-slate-400" data-i18n="feature5_detail">
-                        Your data stays safe on your device
-                    </p>
+                    <h3 class="text-xl font-bold text-slate-900 dark:text-white mb-3" data-i18n="feature5_title">Kolay
+                        Kullanım</h3>
+                    <p class="text-slate-600 dark:text-slate-300 leading-relaxed mb-2" data-i18n="feature5_desc">Hesap
+                        oluşturmaya gerek yok</p>
+                    <p class="text-sm text-slate-500 dark:text-slate-400" data-i18n="feature5_detail">Verileriniz
+                        cihazınızda güvende</p>
                 </div>
 
             </div>
 
             <!-- Free Text Extra -->
             <div class="mt-16 text-center">
-                <p class="text-lg font-medium text-brand-600 dark:text-brand-400" data-i18n="free_text">
-                    Listify is completely free. Download now and start organizing your shopping!
+                <p class="text-lg font-medium text-brand-600 dark:text-brand-400" data-i18n="free_text">Listify tamamen
+                    ücretsizdir. Hemen indirin ve alışverişlerinizi organize etmeye başlayın!</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Screenshots Section -->
+    <section class="py-16 bg-gray-50 dark:bg-slate-900 transition-colors duration-300">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-12">
+                <h2 class="text-3xl font-bold tracking-tight text-slate-900 dark:text-white mb-4"
+                    data-i18n="gallery_title">
+                    App Screenshots
+                </h2>
+                <p class="text-lg text-slate-600 dark:text-slate-300" data-i18n="gallery_subtitle">
+                    Take a closer look at Listify
                 </p>
+            </div>
+
+            <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8">
+                <!-- Screenshot 1 -->
+                <div class="flex flex-col gap-4 items-center">
+                    <div
+                        class="relative w-64 h-[520px] bg-gray-200 dark:bg-slate-800 rounded-[2rem] border-8 border-gray-900 dark:border-slate-700 shadow-2xl flex flex-col items-center justify-center overflow-hidden">
+                        <!-- Screen Content -->
+                        <img src="images/1.jpg" alt="App Screenshot"
+                            class="absolute inset-0 w-full h-full object-cover object-top">
+                        <!-- Notch -->
+                        <div class="absolute top-0 w-32 h-6 bg-gray-900 dark:bg-slate-700 rounded-b-xl"></div>
+                    </div>
+                    <div class="text-center">
+                        <h3 class="font-bold text-slate-900 dark:text-white" data-i18n="gallery_img2_title">Smart
+                            Sorting</h3>
+                        <p class="text-sm text-slate-600 dark:text-slate-400 mt-1" data-i18n="gallery_img2_desc">Items
+                            are automatically categorized</p>
+                    </div>
+                </div>
+
+                <!-- Screenshot 2 -->
+                <div class="flex flex-col gap-4 items-center">
+                    <div
+                        class="relative w-64 h-[520px] bg-gray-200 dark:bg-slate-800 rounded-[2rem] border-8 border-gray-900 dark:border-slate-700 shadow-2xl flex flex-col items-center justify-center overflow-hidden">
+                        <!-- Screen Content -->
+                        <img src="images/3.jpg" alt="App Screenshot"
+                            class="absolute inset-0 w-full h-full object-cover object-top">
+                        <!-- Notch -->
+                        <div class="absolute top-0 w-32 h-6 bg-gray-900 dark:bg-slate-700 rounded-b-xl"></div>
+                    </div>
+                    <div class="text-center">
+                        <h3 class="font-bold text-slate-900 dark:text-white" data-i18n="gallery_img3_title">Daily Tasks
+                        </h3>
+                        <p class="text-sm text-slate-600 dark:text-slate-400 mt-1" data-i18n="gallery_img3_desc">Manage
+                            your daily to-do lists</p>
+                    </div>
+                </div>
+
+                <!-- Screenshot 3 -->
+                <div class="flex flex-col gap-4 items-center">
+                    <div
+                        class="relative w-64 h-[520px] bg-gray-200 dark:bg-slate-800 rounded-[2rem] border-8 border-gray-900 dark:border-slate-700 shadow-2xl flex flex-col items-center justify-center overflow-hidden">
+                        <!-- Screen Content -->
+                        <img src="images/2.jpg" alt="App Screenshot"
+                            class="absolute inset-0 w-full h-full object-cover object-top">
+                        <!-- Notch -->
+                        <div class="absolute top-0 w-32 h-6 bg-gray-900 dark:bg-slate-700 rounded-b-xl"></div>
+                    </div>
+                    <div class="text-center">
+                        <h3 class="font-bold text-slate-900 dark:text-white" data-i18n="gallery_img4_title">Easy Sharing
+                        </h3>
+                        <p class="text-sm text-slate-600 dark:text-slate-400 mt-1" data-i18n="gallery_img4_desc">
+                            Collaborate with friends and family</p>
+                    </div>
+                </div>
+
+                <!-- Screenshot 4 -->
+                <div class="flex flex-col gap-4 items-center">
+                    <div
+                        class="relative w-64 h-[520px] bg-gray-200 dark:bg-slate-800 rounded-[2rem] border-8 border-gray-900 dark:border-slate-700 shadow-2xl flex flex-col items-center justify-center overflow-hidden">
+                        <!-- Screen Content -->
+                        <img src="images/4.jpg" alt="App Screenshot"
+                            class="absolute inset-0 w-full h-full object-cover object-top">
+                        <!-- Notch -->
+                        <div class="absolute top-0 w-32 h-6 bg-gray-900 dark:bg-slate-700 rounded-b-xl"></div>
+                    </div>
+                    <div class="text-center">
+                        <h3 class="font-bold text-slate-900 dark:text-white" data-i18n="gallery_img5_title">Dark Mode
+                        </h3>
+                        <p class="text-sm text-slate-600 dark:text-slate-400 mt-1" data-i18n="gallery_img5_desc">
+                            Comfortable viewing at night</p>
+                    </div>
+                </div>
             </div>
         </div>
     </section>
@@ -293,93 +354,35 @@
             class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex flex-col md:flex-row justify-between items-center gap-6">
             <div class="text-center md:text-left">
                 <div class="flex items-center gap-2 mb-2 justify-center md:justify-start">
-                    <span
-                        class="bg-brand-100 dark:bg-brand-900 text-brand-600 dark:text-brand-400 p-1 rounded-md text-xs">
-                        <i class="fa-solid fa-check-double"></i>
-                    </span>
-                    <span class="font-bold text-slate-900 dark:text-white">Listify</span>
+                    <img src="images/icon.png" alt="Listify" class="w-6 h-6 rounded-md">
+                    <span class="font-bold text-slate-900 dark:text-white" data-i18n="brand_name">Listify</span>
                 </div>
-                <p class="text-sm text-slate-500 dark:text-slate-400">
-                    &copy; 2024 Listify. All rights reserved.
+                <p class="text-sm text-slate-500 dark:text-slate-400" data-i18n="copyright">
+                    &copy; 2026 Listify. All rights reserved.
                 </p>
             </div>
             <div class="flex gap-6 text-sm text-slate-500 dark:text-slate-400">
-                <a href="#" class="hover:text-brand-600 dark:hover:text-brand-400 transition-colors">Privacy Policy</a>
-                <a href="#" class="hover:text-brand-600 dark:hover:text-brand-400 transition-colors">Terms of Use</a>
+                <a href="privacy.html" class="hover:text-brand-600 dark:hover:text-brand-400 transition-colors"
+                    data-i18n="privacy_policy">Privacy
+                    Policy</a>
+                <!-- <a href="/terms.html" class="hover:text-brand-600 dark:hover:text-brand-400 transition-colors"
+                    data-i18n="terms_of_use">Terms of
+                    Use</a> -->
             </div>
         </div>
     </footer>
 
     <!-- Translations & Logic -->
     <script>
-        const translations = {
-            en: {
-                headline: "You add, we organize",
-                subheadline: "Organize your shopping and tasks easily with Listify!",
-                download: "Download",
+        let translations = {};
 
-                // Feature 1: Shopping List
-                feature1_title: "Shopping List",
-                feature1_desc: "Type items, get automatic categorization",
-                feature1_detail: "Fruits, meat, dairy, cleaning supplies and more",
-
-                // Feature 2: To-Do List
-                feature2_title: "To-Do List",
-                feature2_desc: "Plan your daily tasks",
-                feature2_detail: "Mark completed items",
-
-                // Feature 3: List Sharing
-                feature3_title: "List Sharing",
-                feature3_desc: "Share lists with a 6-digit code",
-                feature3_detail: "Code valid for 24 hours",
-
-                // Feature 4: Customization
-                feature4_title: "Customization",
-                feature4_desc: "Dark and light theme support",
-                feature4_detail: "Turkish and English language options",
-
-                // Feature 5: Easy to Use
-                feature5_title: "Easy to Use",
-                feature5_desc: "No account required",
-                feature5_detail: "Your data stays safe on your device",
-
-                // Footer/Extras not explicitly in grid but good to have if needed
-                free_text: "Listify is completely free. Download now and start organizing your shopping!"
-            },
-            tr: {
-                headline: "Siz ekleyin, biz düzenleyelim",
-                subheadline: "Listify ile alışverişlerinizi ve yapılacaklarınızı kolayca organize edin!",
-                download: "İndir",
-
-                // Feature 1: Alışveriş Listesi
-                feature1_title: "Alışveriş Listesi",
-                feature1_desc: "Ürünleri yazın, otomatik olarak kategorize edilsin",
-                feature1_detail: "Meyve, et, süt ürünleri, temizlik malzemeleri ve daha fazlası",
-
-                // Feature 2: Yapılacaklar Listesi
-                feature2_title: "Yapılacaklar Listesi",
-                feature2_desc: "Günlük görevlerinizi planlayın",
-                feature2_detail: "Tamamladıklarınızı işaretleyin",
-
-                // Feature 3: Liste Paylaşımı
-                feature3_title: "Liste Paylaşımı",
-                feature3_desc: "6 haneli kod ile listelerinizi paylaşın",
-                feature3_detail: "Kod 24 saat geçerli",
-
-                // Feature 4: Kişiselleştirme
-                feature4_title: "Kişiselleştirme",
-                feature4_desc: "Koyu ve açık tema desteği",
-                feature4_detail: "Türkçe ve İngilizce dil seçeneği",
-
-                // Feature 5: Kolay Kullanım
-                feature5_title: "Kolay Kullanım",
-                feature5_desc: "Hesap oluşturmaya gerek yok",
-                feature5_detail: "Verileriniz cihazınızda güvende",
-
-                // Footer/Extras
-                free_text: "Listify tamamen ücretsizdir. Hemen indirin ve alışverişlerinizi organize etmeye başlayın!"
-            }
-        };
+        fetch('translations.json')
+            .then(response => response.json())
+            .then(data => {
+                translations = data;
+                updateLanguage(currentLang);
+            })
+            .catch(err => console.error('Error loading translations:', err));
 
         const langToggleBtn = document.getElementById('lang-toggle');
         const langToggleBtnMobile = document.getElementById('lang-toggle-mobile');
@@ -391,6 +394,7 @@
         let currentLang = browserLang;
 
         function updateLanguage(lang) {
+            if (!translations[lang]) return;
             currentLang = lang;
             const texts = translations[lang];
 
@@ -454,7 +458,7 @@
         if (themeToggleBtnMobile) themeToggleBtnMobile.addEventListener('click', toggleTheme);
 
         // Initial Language Set
-        updateLanguage(currentLang);
+
     </script>
 </body>
 
