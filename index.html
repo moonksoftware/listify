@@ -1,0 +1,461 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Listify - You add, we organize</title>
+    <meta name="description" content="Organize your shopping and tasks easily with Listify!">
+
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            darkMode: 'class',
+            theme: {
+                extend: {
+                    fontFamily: {
+                        sans: ['Inter', 'sans-serif'],
+                    },
+                    colors: {
+                        brand: {
+                            50: '#f0fdf4',
+                            100: '#dcfce7',
+                            200: '#bbf7d0',
+                            300: '#86efac',
+                            400: '#4ade80',
+                            500: '#22c55e',
+                            600: '#16a34a', // Primary Green
+                            700: '#15803d',
+                            800: '#166534',
+                            900: '#14532d',
+                            950: '#052e16',
+                        },
+                        mint: {
+                            DEFAULT: '#3EB489',
+                            light: '#6FD1A7',
+                            dark: '#2A8F6A'
+                        }
+                    }
+                }
+            }
+        }
+    </script>
+
+    <!-- FontAwesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+    <style>
+        /* Custom Styles if needed */
+        body {
+            transition: background-color 0.3s, color 0.3s;
+        }
+
+        .gradient-text {
+            background-clip: text;
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-image: linear-gradient(to right, #3EB489, #16a34a);
+        }
+    </style>
+</head>
+
+<body class="bg-gray-50 text-slate-800 dark:bg-slate-900 dark:text-slate-100 transition-colors duration-300">
+
+    <!-- Header -->
+    <header
+        class="fixed w-full top-0 z-50 bg-white/80 dark:bg-slate-900/80 backdrop-blur-md border-b border-gray-100 dark:border-slate-800 transition-colors duration-300">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex justify-between items-center h-16">
+                <!-- Logo -->
+                <div class="flex-shrink-0 flex items-center">
+                    <a href="#"
+                        class="text-2xl font-bold tracking-tight text-slate-900 dark:text-white flex items-center gap-2">
+                        <span
+                            class="bg-brand-100 dark:bg-brand-900 text-brand-600 dark:text-brand-400 p-1.5 rounded-lg">
+                            <i class="fa-solid fa-check-double text-lg"></i>
+                        </span>
+                        Listify
+                    </a>
+                </div>
+
+                <!-- Desktop Nav -->
+                <div class="hidden md:flex items-center space-x-6">
+                    <!-- Theme Toggle -->
+                    <button id="theme-toggle"
+                        class="text-slate-500 hover:text-slate-700 dark:text-slate-400 dark:hover:text-slate-200 transition-colors p-2 rounded-full hover:bg-gray-100 dark:hover:bg-slate-800"
+                        aria-label="Toggle Dark Mode">
+                        <i class="fa-solid fa-moon text-lg" id="theme-icon"></i>
+                    </button>
+
+                    <!-- Language Toggle -->
+                    <button id="lang-toggle"
+                        class="text-sm font-medium text-slate-600 hover:text-brand-600 dark:text-slate-300 dark:hover:text-brand-400 transition-colors px-3 py-1 rounded-full border border-gray-200 dark:border-slate-700 hover:border-brand-200 dark:hover:border-brand-800">
+                        <span id="current-lang">EN</span>
+                    </button>
+
+                    <!-- CTA Button -->
+                    <a href="#download"
+                        class="bg-brand-600 hover:bg-brand-700 text-white px-5 py-2 rounded-full font-medium transition-all shadow-lg shadow-brand-500/20 hover:shadow-brand-500/40 text-sm"
+                        data-i18n="download">
+                        Download
+                    </a>
+                </div>
+
+                <!-- Mobile Menu Button -->
+                <div class="md:hidden flex items-center gap-4">
+                    <button id="theme-toggle-mobile"
+                        class="text-slate-500 hover:text-slate-700 dark:text-slate-400 dark:hover:text-slate-200"
+                        aria-label="Toggle Dark Mode">
+                        <i class="fa-solid fa-moon" id="theme-icon-mobile"></i>
+                    </button>
+                    <button id="lang-toggle-mobile"
+                        class="text-sm font-medium text-slate-600 dark:text-slate-300 border border-gray-200 dark:border-slate-700 px-2 py-1 rounded">
+                        <span id="current-lang-mobile">EN</span>
+                    </button>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="pt-32 pb-16 md:pt-40 md:pb-24 overflow-hidden">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative">
+            <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+                <!-- Content -->
+                <div class="text-center lg:text-left z-10">
+                    <h1
+                        class="text-4xl md:text-5xl lg:text-6xl font-bold tracking-tight mb-6 text-slate-900 dark:text-white">
+                        <span class="gradient-text" data-i18n="headline">You add, we organize</span>
+                    </h1>
+                    <p class="text-lg md:text-xl text-slate-600 dark:text-slate-300 mb-8 max-w-2xl mx-auto lg:mx-0 leading-relaxed"
+                        data-i18n="subheadline">
+                        Organize your shopping and tasks easily with Listify!
+                    </p>
+
+                    <div class="flex flex-col sm:flex-row gap-4 justify-center lg:justify-start" id="download">
+                        <a href="#"
+                            class="inline-flex items-center justify-center px-6 py-3 border border-transparent text-base font-medium rounded-xl text-white bg-slate-900 hover:bg-slate-800 dark:bg-white dark:text-slate-900 dark:hover:bg-slate-100 transition-all shadow-xl hover:shadow-2xl transform hover:-translate-y-1">
+                            <i class="fa-brands fa-apple text-2xl mr-3"></i>
+                            <div class="text-left">
+                                <div class="text-xs uppercase opacity-80">Download on the</div>
+                                <div class="font-bold leading-none">App Store</div>
+                            </div>
+                        </a>
+                        <a href="#"
+                            class="inline-flex items-center justify-center px-6 py-3 border border-transparent text-base font-medium rounded-xl text-white bg-brand-600 hover:bg-brand-700 transition-all shadow-xl shadow-brand-500/30 hover:shadow-brand-500/50 transform hover:-translate-y-1">
+                            <i class="fa-brands fa-google-play text-xl mr-3"></i>
+                            <div class="text-left">
+                                <div class="text-xs uppercase opacity-80">Get it on</div>
+                                <div class="font-bold leading-none">Google Play</div>
+                            </div>
+                        </a>
+                    </div>
+                </div>
+
+                <!-- Visual -->
+                <div class="relative lg:h-auto flex justify-center items-center">
+                    <!-- Blob Background -->
+                    <div
+                        class="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[120%] h-[120%] bg-brand-200/50 dark:bg-brand-900/20 blur-3xl rounded-full -z-10 animate-pulse">
+                    </div>
+
+                    <!-- App Screenshot Placeholder -->
+                    <div
+                        class="relative w-64 h-[500px] md:w-72 md:h-[550px] bg-gray-200 dark:bg-slate-800 rounded-[3rem] border-8 border-gray-900 dark:border-slate-700 shadow-2xl flex flex-col items-center justify-center overflow-hidden">
+                        <!-- Screen Content -->
+                        <div
+                            class="absolute top-0 w-full h-full bg-white dark:bg-slate-800 flex flex-col items-center justify-center p-6 text-center">
+                            <i class="fa-solid fa-mobile-screen text-6xl text-gray-300 dark:text-slate-600 mb-4"></i>
+                            <span
+                                class="text-gray-400 dark:text-slate-500 font-medium text-sm uppercase tracking-widest">
+                                App Screenshot<br>Placeholder
+                            </span>
+                        </div>
+                        <!-- Notch -->
+                        <div class="absolute top-0 w-32 h-6 bg-gray-900 dark:bg-slate-700 rounded-b-xl"></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Features Section -->
+    <section class="py-16 md:py-24 bg-white dark:bg-slate-800 transition-colors duration-300">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+
+                <!-- Feature 1 -->
+                <div
+                    class="bg-gray-50 dark:bg-slate-700/50 p-8 rounded-2xl hover:shadow-lg transition-all duration-300 border border-gray-100 dark:border-slate-700 group">
+                    <div
+                        class="w-12 h-12 bg-brand-100 dark:bg-brand-900/50 rounded-xl flex items-center justify-center text-brand-600 dark:text-brand-400 mb-6 group-hover:scale-110 transition-transform">
+                        <i class="fa-solid fa-basket-shopping text-xl"></i>
+                    </div>
+                    <h3 class="text-xl font-bold text-slate-900 dark:text-white mb-3" data-i18n="feature1_title">
+                        Shopping List</h3>
+                    <p class="text-slate-600 dark:text-slate-300 leading-relaxed mb-2" data-i18n="feature1_desc">
+                        Type items, get automatic categorization
+                    </p>
+                    <p class="text-sm text-slate-500 dark:text-slate-400" data-i18n="feature1_detail">
+                        Fruits, meat, dairy, cleaning supplies and more
+                    </p>
+                </div>
+
+                <!-- Feature 2 -->
+                <div
+                    class="bg-gray-50 dark:bg-slate-700/50 p-8 rounded-2xl hover:shadow-lg transition-all duration-300 border border-gray-100 dark:border-slate-700 group">
+                    <div
+                        class="w-12 h-12 bg-blue-100 dark:bg-blue-900/30 rounded-xl flex items-center justify-center text-blue-600 dark:text-blue-400 mb-6 group-hover:scale-110 transition-transform">
+                        <i class="fa-solid fa-check-to-slot text-xl"></i>
+                    </div>
+                    <h3 class="text-xl font-bold text-slate-900 dark:text-white mb-3" data-i18n="feature2_title">To-Do
+                        List</h3>
+                    <p class="text-slate-600 dark:text-slate-300 leading-relaxed mb-2" data-i18n="feature2_desc">
+                        Plan your daily tasks
+                    </p>
+                    <p class="text-sm text-slate-500 dark:text-slate-400" data-i18n="feature2_detail">
+                        Mark completed items
+                    </p>
+                </div>
+
+                <!-- Feature 3 -->
+                <div
+                    class="bg-gray-50 dark:bg-slate-700/50 p-8 rounded-2xl hover:shadow-lg transition-all duration-300 border border-gray-100 dark:border-slate-700 group">
+                    <div
+                        class="w-12 h-12 bg-purple-100 dark:bg-purple-900/30 rounded-xl flex items-center justify-center text-purple-600 dark:text-purple-400 mb-6 group-hover:scale-110 transition-transform">
+                        <i class="fa-solid fa-share-nodes text-xl"></i>
+                    </div>
+                    <h3 class="text-xl font-bold text-slate-900 dark:text-white mb-3" data-i18n="feature3_title">List
+                        Sharing</h3>
+                    <p class="text-slate-600 dark:text-slate-300 leading-relaxed mb-2" data-i18n="feature3_desc">
+                        Share lists with a 6-digit code
+                    </p>
+                    <p class="text-sm text-slate-500 dark:text-slate-400" data-i18n="feature3_detail">
+                        Code valid for 24 hours
+                    </p>
+                </div>
+
+                <!-- Feature 4 -->
+                <div
+                    class="bg-gray-50 dark:bg-slate-700/50 p-8 rounded-2xl hover:shadow-lg transition-all duration-300 border border-gray-100 dark:border-slate-700 group">
+                    <div
+                        class="w-12 h-12 bg-amber-100 dark:bg-amber-900/30 rounded-xl flex items-center justify-center text-amber-600 dark:text-amber-400 mb-6 group-hover:scale-110 transition-transform">
+                        <i class="fa-solid fa-wand-magic-sparkles text-xl"></i>
+                    </div>
+                    <h3 class="text-xl font-bold text-slate-900 dark:text-white mb-3" data-i18n="feature4_title">
+                        Customization</h3>
+                    <p class="text-slate-600 dark:text-slate-300 leading-relaxed mb-2" data-i18n="feature4_desc">
+                        Dark and light theme support
+                    </p>
+                    <p class="text-sm text-slate-500 dark:text-slate-400" data-i18n="feature4_detail">
+                        Turkish and English language options
+                    </p>
+                </div>
+
+                <!-- Feature 5 -->
+                <div
+                    class="bg-gray-50 dark:bg-slate-700/50 p-8 rounded-2xl hover:shadow-lg transition-all duration-300 border border-gray-100 dark:border-slate-700 group sm:col-span-2 lg:col-span-2">
+                    <div
+                        class="w-12 h-12 bg-rose-100 dark:bg-rose-900/30 rounded-xl flex items-center justify-center text-rose-600 dark:text-rose-400 mb-6 group-hover:scale-110 transition-transform">
+                        <i class="fa-solid fa-heart text-xl"></i>
+                    </div>
+                    <h3 class="text-xl font-bold text-slate-900 dark:text-white mb-3" data-i18n="feature5_title">Easy to
+                        Use</h3>
+                    <p class="text-slate-600 dark:text-slate-300 leading-relaxed mb-2" data-i18n="feature5_desc">
+                        No account required
+                    </p>
+                    <p class="text-sm text-slate-500 dark:text-slate-400" data-i18n="feature5_detail">
+                        Your data stays safe on your device
+                    </p>
+                </div>
+
+            </div>
+
+            <!-- Free Text Extra -->
+            <div class="mt-16 text-center">
+                <p class="text-lg font-medium text-brand-600 dark:text-brand-400" data-i18n="free_text">
+                    Listify is completely free. Download now and start organizing your shopping!
+                </p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer
+        class="bg-white dark:bg-slate-900 border-t border-gray-100 dark:border-slate-800 py-12 transition-colors duration-300">
+        <div
+            class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex flex-col md:flex-row justify-between items-center gap-6">
+            <div class="text-center md:text-left">
+                <div class="flex items-center gap-2 mb-2 justify-center md:justify-start">
+                    <span
+                        class="bg-brand-100 dark:bg-brand-900 text-brand-600 dark:text-brand-400 p-1 rounded-md text-xs">
+                        <i class="fa-solid fa-check-double"></i>
+                    </span>
+                    <span class="font-bold text-slate-900 dark:text-white">Listify</span>
+                </div>
+                <p class="text-sm text-slate-500 dark:text-slate-400">
+                    &copy; 2024 Listify. All rights reserved.
+                </p>
+            </div>
+            <div class="flex gap-6 text-sm text-slate-500 dark:text-slate-400">
+                <a href="#" class="hover:text-brand-600 dark:hover:text-brand-400 transition-colors">Privacy Policy</a>
+                <a href="#" class="hover:text-brand-600 dark:hover:text-brand-400 transition-colors">Terms of Use</a>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Translations & Logic -->
+    <script>
+        const translations = {
+            en: {
+                headline: "You add, we organize",
+                subheadline: "Organize your shopping and tasks easily with Listify!",
+                download: "Download",
+
+                // Feature 1: Shopping List
+                feature1_title: "Shopping List",
+                feature1_desc: "Type items, get automatic categorization",
+                feature1_detail: "Fruits, meat, dairy, cleaning supplies and more",
+
+                // Feature 2: To-Do List
+                feature2_title: "To-Do List",
+                feature2_desc: "Plan your daily tasks",
+                feature2_detail: "Mark completed items",
+
+                // Feature 3: List Sharing
+                feature3_title: "List Sharing",
+                feature3_desc: "Share lists with a 6-digit code",
+                feature3_detail: "Code valid for 24 hours",
+
+                // Feature 4: Customization
+                feature4_title: "Customization",
+                feature4_desc: "Dark and light theme support",
+                feature4_detail: "Turkish and English language options",
+
+                // Feature 5: Easy to Use
+                feature5_title: "Easy to Use",
+                feature5_desc: "No account required",
+                feature5_detail: "Your data stays safe on your device",
+
+                // Footer/Extras not explicitly in grid but good to have if needed
+                free_text: "Listify is completely free. Download now and start organizing your shopping!"
+            },
+            tr: {
+                headline: "Siz ekleyin, biz düzenleyelim",
+                subheadline: "Listify ile alışverişlerinizi ve yapılacaklarınızı kolayca organize edin!",
+                download: "İndir",
+
+                // Feature 1: Alışveriş Listesi
+                feature1_title: "Alışveriş Listesi",
+                feature1_desc: "Ürünleri yazın, otomatik olarak kategorize edilsin",
+                feature1_detail: "Meyve, et, süt ürünleri, temizlik malzemeleri ve daha fazlası",
+
+                // Feature 2: Yapılacaklar Listesi
+                feature2_title: "Yapılacaklar Listesi",
+                feature2_desc: "Günlük görevlerinizi planlayın",
+                feature2_detail: "Tamamladıklarınızı işaretleyin",
+
+                // Feature 3: Liste Paylaşımı
+                feature3_title: "Liste Paylaşımı",
+                feature3_desc: "6 haneli kod ile listelerinizi paylaşın",
+                feature3_detail: "Kod 24 saat geçerli",
+
+                // Feature 4: Kişiselleştirme
+                feature4_title: "Kişiselleştirme",
+                feature4_desc: "Koyu ve açık tema desteği",
+                feature4_detail: "Türkçe ve İngilizce dil seçeneği",
+
+                // Feature 5: Kolay Kullanım
+                feature5_title: "Kolay Kullanım",
+                feature5_desc: "Hesap oluşturmaya gerek yok",
+                feature5_detail: "Verileriniz cihazınızda güvende",
+
+                // Footer/Extras
+                free_text: "Listify tamamen ücretsizdir. Hemen indirin ve alışverişlerinizi organize etmeye başlayın!"
+            }
+        };
+
+        const langToggleBtn = document.getElementById('lang-toggle');
+        const langToggleBtnMobile = document.getElementById('lang-toggle-mobile');
+        const currentLangSpan = document.getElementById('current-lang');
+        const currentLangSpanMobile = document.getElementById('current-lang-mobile');
+
+        // Check browser language or default to 'en'
+        const browserLang = navigator.language.startsWith('tr') ? 'tr' : 'en';
+        let currentLang = browserLang;
+
+        function updateLanguage(lang) {
+            currentLang = lang;
+            const texts = translations[lang];
+
+            // Update button texts
+            const displayLang = lang.toUpperCase();
+            if (currentLangSpan) currentLangSpan.textContent = displayLang;
+            if (currentLangSpanMobile) currentLangSpanMobile.textContent = displayLang;
+
+            // Update all elements with data-i18n attribute
+            document.querySelectorAll('[data-i18n]').forEach(element => {
+                const key = element.getAttribute('data-i18n');
+                if (texts[key]) {
+                    element.textContent = texts[key];
+                }
+            });
+
+            // Update HTML lang attribute
+            document.documentElement.lang = lang;
+        }
+
+        function toggleLanguage() {
+            const newLang = currentLang === 'en' ? 'tr' : 'en';
+            updateLanguage(newLang);
+        }
+
+        if (langToggleBtn) langToggleBtn.addEventListener('click', toggleLanguage);
+        if (langToggleBtnMobile) langToggleBtnMobile.addEventListener('click', toggleLanguage);
+
+        // Theme Toggle Logic
+        const themeToggleBtn = document.getElementById('theme-toggle');
+        const themeToggleBtnMobile = document.getElementById('theme-toggle-mobile');
+        const themeIcon = document.getElementById('theme-icon');
+        const themeIconMobile = document.getElementById('theme-icon-mobile');
+
+        function updateThemeIcon(isDark) {
+            const iconClass = isDark ? 'fa-sun' : 'fa-moon';
+            if (themeIcon) themeIcon.className = `fa-solid ${iconClass} text-lg`;
+            if (themeIconMobile) themeIconMobile.className = `fa-solid ${iconClass}`;
+        }
+
+        function toggleTheme() {
+            document.documentElement.classList.toggle('dark');
+            const isDark = document.documentElement.classList.contains('dark');
+            localStorage.setItem('theme', isDark ? 'dark' : 'light');
+            updateThemeIcon(isDark);
+        }
+
+        // Initialize theme matches system or saved
+        const savedTheme = localStorage.getItem('theme');
+        const systemPrefersDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
+
+        if (savedTheme === 'dark' || (!savedTheme && systemPrefersDark)) {
+            document.documentElement.classList.add('dark');
+            updateThemeIcon(true);
+        } else {
+            document.documentElement.classList.remove('dark');
+            updateThemeIcon(false);
+        }
+
+        if (themeToggleBtn) themeToggleBtn.addEventListener('click', toggleTheme);
+        if (themeToggleBtnMobile) themeToggleBtnMobile.addEventListener('click', toggleTheme);
+
+        // Initial Language Set
+        updateLanguage(currentLang);
+    </script>
+</body>
+
+</html>
