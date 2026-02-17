@@ -1,157 +1,26 @@
-<!DOCTYPE html>
-<html lang="tr">
+<!doctype html>
+<html lang="en">
 
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Projelerim - Baki</title>
-    <script src="https://cdn.tailwindcss.com"></script>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-    <script>
-        tailwind.config = {
-            darkMode: 'class',
-            theme: {
-                extend: {
-                    fontFamily: {
-                        sans: ['Inter', 'sans-serif'],
-                    },
-                    colors: {
-                        brand: {
-                            50: '#f0fdf4',
-                            100: '#dcfce7',
-                            200: '#bbf7d0',
-                            300: '#86efac',
-                            400: '#4ade80',
-                            500: '#22c55e',
-                            600: '#16a34a',
-                            700: '#15803d',
-                            800: '#166534',
-                            900: '#14532d',
-                            950: '#052e16',
-                        }
-                    }
-                }
-            }
-        }
-    </script>
-    <style>
-        body {
-            font-family: 'Inter', sans-serif;
-        }
-    </style>
+  <meta charset="UTF-8" />
+  <link rel="icon" type="image/png" href="/images/icon.png" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Listify - You add, we organize</title>
+  <meta name="description" content="Organize your shopping and tasks easily with Listify!">
+
+  <!-- Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+
+  <!-- FontAwesome -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  <script type="module" crossorigin src="/assets/index-DuhT-02j.js"></script>
+  <link rel="stylesheet" crossorigin href="/assets/index-BwxV4aoH.css">
 </head>
 
-<body
-    class="bg-gray-50 text-slate-800 dark:bg-slate-900 dark:text-slate-100 min-h-screen flex flex-col transition-colors duration-300">
-
-    <!-- Header -->
-    <header class="bg-white dark:bg-slate-800 shadow-sm sticky top-0 z-50 transition-colors duration-300">
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-16 flex items-center justify-between">
-            <h1 class="text-2xl font-bold text-slate-900 dark:text-white flex items-center gap-2">
-                <i class="fa-solid fa-code text-brand-600"></i>
-                Projelerim
-            </h1>
-            <div class="flex items-center gap-4">
-                <!-- Theme Toggle -->
-                <button id="theme-toggle"
-                    class="text-slate-500 hover:text-slate-700 dark:text-slate-400 dark:hover:text-slate-200 transition-colors p-2 rounded-full hover:bg-gray-100 dark:hover:bg-slate-700"
-                    aria-label="Toggle Dark Mode">
-                    <i class="fa-solid fa-moon text-xl" id="theme-icon"></i>
-                </button>
-            </div>
-        </div>
-    </header>
-
-    <!-- Main Content -->
-    <main class="flex-grow max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
-        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-
-            <!-- Listify Card -->
-            <a href="./listify/index.html" class="block group">
-                <div
-                    class="bg-white dark:bg-slate-800 rounded-2xl overflow-hidden shadow-sm hover:shadow-xl transition-all duration-300 border border-gray-100 dark:border-slate-700 transform hover:-translate-y-1 h-full flex flex-col">
-                    <div
-                        class="h-48 bg-brand-50 dark:bg-brand-900/20 flex items-center justify-center relative overflow-hidden p-8">
-                        <div class="absolute inset-0 bg-gradient-to-tr from-brand-500/5 to-transparent"></div>
-                        <!-- Folder Icon placeholder or actual image if available -->
-                        <img src="./listify/images/icon.png" alt="Listify"
-                            class="w-full h-full object-contain drop-shadow-md transform group-hover:scale-105 transition-transform duration-500"
-                            onerror="this.onerror=null; this.src='https://placehold.co/400x300/22c55e/ffffff?text=Listify'; this.className='w-full h-full object-cover'">
-                    </div>
-                    <div class="p-6 flex-grow flex flex-col justify-between">
-                        <div>
-                            <h2
-                                class="text-xl font-bold text-slate-900 dark:text-white mb-2 group-hover:text-brand-600 dark:group-hover:text-brand-400 transition-colors">
-                                Listify</h2>
-                            <p class="text-slate-600 dark:text-slate-400 text-sm line-clamp-3 mb-4">
-                                Akıllı alışveriş ve yapılacaklar listesi uygulaması. Listelerinizi kolayca oluşturun,
-                                kategorize edin ve arkadaşlarınızla paylaşın.
-                            </p>
-                        </div>
-                        <div class="flex items-center text-brand-600 dark:text-brand-400 font-medium text-sm mt-auto">
-                            <span>Projeye Git</span>
-                            <i class="fa-solid fa-arrow-right ml-2 group-hover:translate-x-1 transition-transform"></i>
-                        </div>
-                    </div>
-                </div>
-            </a>
-
-            <!-- Placeholder for Future Projects (Optional, visible only in dev or just empty for now) -->
-            <!-- 
-            <div class="border-2 border-dashed border-gray-300 dark:border-slate-700 rounded-2xl flex items-center justify-center p-8 text-center text-gray-400 dark:text-slate-600">
-                <div>
-                    <i class="fa-solid fa-plus text-3xl mb-2"></i>
-                    <p class="font-medium">Yeni Proje</p>
-                </div>
-            </div> 
-            -->
-
-        </div>
-    </main>
-
-    <!-- Footer -->
-    <footer
-        class="bg-white dark:bg-slate-800 border-t border-gray-100 dark:border-slate-700 py-8 transition-colors duration-300">
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center text-slate-500 dark:text-slate-400 text-sm">
-            <p>&copy; 2026 Baki. Tüm hakları saklıdır.</p>
-        </div>
-    </footer>
-
-    <script>
-        // Theme Toggle Logic
-        const themeToggleBtn = document.getElementById('theme-toggle');
-        const themeIcon = document.getElementById('theme-icon');
-
-        function updateThemeIcon(isDark) {
-            const iconClass = isDark ? 'fa-sun' : 'fa-moon';
-            if (themeIcon) themeIcon.className = `fa-solid ${iconClass} text-xl`;
-            if (themeToggleBtn) {
-                themeToggleBtn.setAttribute('aria-label', isDark ? 'Switch to Light Mode' : 'Switch to Dark Mode');
-            }
-        }
-
-        function toggleTheme() {
-            document.documentElement.classList.toggle('dark');
-            const isDark = document.documentElement.classList.contains('dark');
-            localStorage.setItem('theme', isDark ? 'dark' : 'light');
-            updateThemeIcon(isDark);
-        }
-
-        // Initialize theme matches system or saved
-        const savedTheme = localStorage.getItem('theme');
-        const systemPrefersDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
-
-        if (savedTheme === 'dark' || (!savedTheme && systemPrefersDark)) {
-            document.documentElement.classList.add('dark');
-            updateThemeIcon(true);
-        } else {
-            document.documentElement.classList.remove('dark');
-            updateThemeIcon(false);
-        }
-
-        if (themeToggleBtn) themeToggleBtn.addEventListener('click', toggleTheme);
-    </script>
+<body>
+  <div id="root"></div>
 </body>
 
 </html>
